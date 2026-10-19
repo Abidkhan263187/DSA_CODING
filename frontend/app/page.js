@@ -6,6 +6,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { getToken } from "@/lib/auth";
+import StudioSkeleton from "@/components/StudioSkeleton";
+import HomePageSkeleton from "@/components/HomePageSkeleton";
+
 
 export default function HomePage() {
   const router = useRouter();
@@ -26,11 +29,7 @@ export default function HomePage() {
 
   if (checkingSession) {
     return (
-      <main className="home-loading">
-        <div className="home-loading-mark">AK</div>
-        <div className="home-loading-spinner" />
-        <p>Preparing your DSA studio...</p>
-      </main>
+     <HomePageSkeleton />
     );
   }
 
@@ -81,7 +80,7 @@ export default function HomePage() {
           </div>
           <div className="preview-progress">
             <div className="preview-progress-label">
-<span>Consistency over perfection</span>&nbsp;
+              <span>Consistency over perfection</span>&nbsp;
               <span>01 / 03</span>
             </div>
             &nbsp;

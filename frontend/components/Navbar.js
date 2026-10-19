@@ -76,7 +76,7 @@ export default function Navbar({ variant = "studio" }) {
     setOpen(false);
     setProfileOpen(false);
     clearSession();
-    router.replace("/login");
+    router.replace("/");
     setTimeout(() => {
       setLoading(false);
     }, 1000);
